@@ -12,7 +12,7 @@ char controlDelDoWhile;
 Console.WriteLine("PROGRAMA: CALCULADORA (V1)");
 do
 {
-    Console.Write("¿Que calculo desea realizar?\n1.- SUMA\n2.- RESTA\n3.- MULTIPLICAR\n4.- DIVIDIR\nOtro.- Salir\nIngrese una numero: ");
+    Console.Write("¿Que calculo desea realizar?\n1.- SUMA\n2.- RESTA\n3.- MULTIPLICAR\n4.- DIVIDIR\nOtro.- Salir\nIngrese una opcion: ");
     while (!int.TryParse(Console.ReadLine(), out opcion))
     {
         Console.Write("Entrada invalida. Intente nuevamente: ");
@@ -36,7 +36,14 @@ do
             Console.WriteLine($"Usted eligio MULTIPLICACION: {numero1} * {numero2} = {numero1 * numero2}");
             break;
         case 4:
+        if (numero2!=0)
+        {
             Console.WriteLine($"Usted eligio DIVISION: {numero1} / {numero2} = {numero1 / numero2}");
+        }else
+        {
+            Console.WriteLine($"No se puede realizar esa operacion");
+        }
+            
             break;
         default:
             Console.WriteLine("No se realizo ninguna operacion");
